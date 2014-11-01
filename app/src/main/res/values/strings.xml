@@ -4,7 +4,17 @@
     <string name="app_name">Maven</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!--Login-->
     <string name="sign_up">Sign up</string>
     <string name="login">Login</string>
+
+    <!--Profile display-->
+    <string name="question_prompt">Question:</string>
+    <string name="question_display">[Place question here.]</string>
+    <string name="curious_prompt">What are you curious about?</string>
+    <string name="curious_display">[Insert curiosities here.]</string>
+    <string name="know_prompt">What are you know a lot about?</string>
+    <string name="know_display">[Insert knowledge here.]</string>
 
 </resources>
