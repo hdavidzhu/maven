@@ -8,27 +8,31 @@ import android.widget.Button;
 
 public class Login extends Activity {
 
-    Intent openBasicInfo;
+    Intent openProfile;
+    Intent openSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.login);
-        openBasicInfo = new Intent("com.combunyipcmaven.github.maven.MyActivity");
+        openProfile = new Intent("com.combunyipcmaven.github.maven.MyActivity");
+        openSignup = new Intent("com.combunyipcmaven.github.maven.Signup");
 
         Button loginButton = (Button) findViewById(R.id.bt_login);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(openBasicInfo);
+                startActivity(openProfile);
+            }
+        });
+
+        Button signupButton = (Button) findViewById(R.id.bt_signup);
+        signupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(openSignup);
             }
         });
     }
-
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        finish();
-//    }
 }

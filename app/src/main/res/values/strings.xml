@@ -9,6 +9,13 @@
     <string name="sign_up">Sign up</string>
     <string name="login">Login</string>
 
+    <!--Signup-->
+    <string name="basic_display">Basic Information</string>
+    <string name="name_prompt">What is your name?</string>
+    <string name="firstname_hint">First name here.</string>
+    <string name="lastname_hint">Last name here.</string>
+
+
     <!--Profile display-->
     <string name="question_prompt">Question:</string>
     <string name="question_display">[Place question here.]</string>
