@@ -15,6 +15,8 @@
     <string name="firstname_hint">First name here.</string>
     <string name="lastname_hint">Last name here.</string>
 
+    <!--Camera-->
+    <string name="Capture">Capture</string>
 
     <!--Profile display-->
     <string name="question_prompt">Question:</string>

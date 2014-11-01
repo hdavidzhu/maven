@@ -1,55 +1,68 @@
 package combunyipcmaven.github.maven;
 
-
 import android.app.Activity;
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Camera;
-import android.media.CamcorderProfile;
-import android.media.MediaRecorder;
-import android.media.audiofx.EnvironmentalReverb;
-import android.os.Environment;
-
-import java.io.File;
-
-public class RecordScreen extends Activity{
-
-    Camera camera;
-    public static final int MEDIA_TYPE_IMAGE = 1;
-    public static final int MEDIA_TYPE_VIDEO = 2;
-    CameraPreview preview = new CameraPreview(this, camera);
-    File dir = this.getExternalFilesDir(Environment.DIRECTORY_MOVIES);
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 
-//    File dir  = Environment.getExternalStorageDirectory(Environment.DIRECTORY_PICTURES);
+public class RecordScreen extends Activity {
+    private ShowCamera showCamera;
+    private Camera cameraObject;
 
-    private MediaRecorder mr;
-    protected boolean prepareForVideoRecording() {
-        camera.unlock();
-        mr = new MediaRecorder();
-        mr.setCamera(camera);
-        mr.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
-        mr.setVideoSource(MediaRecorder.VideoSource.CAMERA);
-        mr.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH));
-        mr.setOutputFile(getOutputMediaFile(MEDIA_TYPE_VIDEO).toString());
-        mr.setPreviewDisplay(preview.getHolder().getSurface());
-
-        return true;
+    public static Camera isCameraAvailable() {
+        Camera object = null;
+        try {object = Camera.open();}
+        catch (Exception e){}
+        return object;
     }
 
-    private File getOutputMediaFile(int type) {
-        // Get directory and timestamp as before
-        if (type == MEDIA_TYPE_IMAGE) {
-            return new File(dir.getPath() + File.separator + "IMG_"
-                    + timeStamp + ".jpg");
-        } else if (type == MEDIA_TYPE_VIDEO) {
-            return new File(dir.getPath() + File.separator + "VID_"
-                    + timeStamp + ".3gp");
-        } else {
-            return null;
+    private Camera.PictureCallback capturedIt = new Camera.PictureCallback() {
+        @Override
+        public void onPictureTaken(byte[] data, Camera camera) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+            if (bitmap == null) {
+                Toast.makeText(getApplicationContext(), "not taken", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "taken", Toast.LENGTH_SHORT).show();
+            }
+            cameraObject.release();
         }
-    }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.record_screen);
+        cameraObject = isCameraAvailable();
+        showCamera = new ShowCamera(this, cameraObject);
+        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+        preview.addView(showCamera);
+
+        Button captureButton = (Button) findViewById(R.id.bt_capture);
+        captureButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return true;
+            }
+        });
 
 
     }
 
+    public void snapIt(View view) {
+        cameraObject.takePicture(null, null, capturedIt);
+    }
 }
