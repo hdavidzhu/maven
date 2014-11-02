@@ -30,5 +30,5 @@ public class Login extends Activity {
 //    protected void onPause() {
 //        super.onPause();
 //        finish();
-//    }
+//    }pp
 }
