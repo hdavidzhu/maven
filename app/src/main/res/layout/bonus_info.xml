@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Tell us more about you (optional). More information makes our algorithm work better and will provide better matches for you."/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Sync with LinkedIn"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/work_experience_input"
+            android:hint="Work Experience"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/education_experience_input"
+            android:hint="Education Experience"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/interests_input"
+            android:hint="Interests"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/hobbies_input"
+            android:hint="Hobbies"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/bt_submit_bonus_info"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:id="@+id/profile_fragment">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/videoView"
+        android:layout_weight="0.10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/question_prompt"
+        android:id="@+id/question_prompt"
+        android:layout_weight="0.10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/question_display"
+        android:id="@+id/question_display"
+        android:layout_weight="0.10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/curious_prompt"
+        android:id="@+id/curious_prompt"
+        android:layout_weight="0.10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/curious_display"
+        android:id="@+id/curious_display"
+        android:layout_weight="0.10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/know_prompt"
+        android:id="@+id/textView4"
+        android:layout_weight="0.10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/curious_display"
+        android:id="@+id/textView5"
+        android:layout_weight="0.10" />
+
+</LinearLayout>

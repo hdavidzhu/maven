@@ -1,6 +1,7 @@
 package combunyipcmaven.github.maven;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Camera;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 public class RecordScreen extends Activity {
     private ShowCamera showCamera;
     private Camera cameraObject;
+
+    Intent openBonusInfo;
 
     public static Camera isCameraAvailable() {
         Camera object = null;
@@ -59,6 +62,15 @@ public class RecordScreen extends Activity {
             }
         });
 
+        openBonusInfo = new Intent("com.combunyipcmaven.github.maven.BonusInfo");
+
+        Button videoSubmitButton = (Button) findViewById(R.id.bt_video_submit);
+        videoSubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(openBonusInfo);
+            }
+        });
 
     }
 

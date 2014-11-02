@@ -16,7 +16,7 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.login);
-        openProfile = new Intent("com.combunyipcmaven.github.maven.MyActivity");
+        openProfile = new Intent("com.combunyipcmaven.github.maven.Profile");
         openSignup = new Intent("com.combunyipcmaven.github.maven.Signup");
 
         Button loginButton = (Button) findViewById(R.id.bt_login);

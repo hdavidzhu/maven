@@ -4,16 +4,16 @@ import android.app.Activity;
 import android.os.Bundle;
 
 
-public class MyActivity extends Activity {
+public class Profile extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_activity);
+        setContentView(R.layout.profile);
 
         ProfileFragment profileFragment = new ProfileFragment();
 
         getFragmentManager().beginTransaction()
-                .add(R.id.my_activity, profileFragment)
+                .add(R.id.profile, profileFragment)
                 .commit();
     }
 }
