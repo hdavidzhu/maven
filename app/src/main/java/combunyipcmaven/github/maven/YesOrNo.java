@@ -24,6 +24,5 @@ public class YesOrNo extends Fragment {
 
     public interface Callbacks {
         public void onItemSelected(String yesNoChoice);
-
     }
 }

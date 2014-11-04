@@ -8,7 +8,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Ok! Take me to Home >>"
-        android:id="@+id/bt_yes"
+        android:id="@+id/bt_take_me_to_home"
         android:layout_gravity="start"
         android:layout_alignParentBottom="true"/>
 

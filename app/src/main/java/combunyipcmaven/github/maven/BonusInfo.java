@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class BonusInfo extends Activity{
-
+public class BonusInfo extends Activity {
     Intent openProfile;
 
     @Override
@@ -16,7 +15,8 @@ public class BonusInfo extends Activity{
         setContentView(R.layout.bonus_info);
 
         Button submitBonusInfo = (Button) findViewById(R.id.bt_submit_bonus_info);
-        openProfile = new Intent("com.combunyipcmaven.github.maven.Profile");
+        openProfile = new Intent(this, Profile.class);
+        openProfile.putExtra("source", "BonusInfo");
 
         submitBonusInfo.setOnClickListener(new View.OnClickListener() {
             @Override
